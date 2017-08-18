@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FloatingHearts_Example' do
+  pod 'FloatingHearts', :path => '../'
+
+  target 'FloatingHearts_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
