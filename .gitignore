@@ -12,3 +12,5 @@ xcuserdata
 xcuserdata
 profile
 DerivedData
+Pods/
+Podfile.lock
