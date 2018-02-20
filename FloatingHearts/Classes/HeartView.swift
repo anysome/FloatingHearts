@@ -84,7 +84,7 @@ open class HeartView: UIView {
 
     fileprivate func performSlightRotationAnimation(_ direction: RotationDirection) {
         let rotationFraction = randomNumber(10)
-        animate(duration: Durations.Full, delay: 0) {
+        UIView.animate(withDuration: Durations.Full) {
             self.transform = CGAffineTransform(rotationAngle: direction.rawValue * PI / (16 + rotationFraction * 0.2))
                 .scaledBy(x: 1.0 + rotationFraction/6.0, y: 1.0 + rotationFraction/6.0)
         }
@@ -129,11 +129,11 @@ open class HeartView: UIView {
     }
 
     fileprivate func animateToFinalAlpha(withDuration duration: TimeInterval = Durations.Full) {
-        animate(duration: duration, delay: 0,
+        UIView.animate(withDuration: duration, delay: 0,
             animations: {
                 self.alpha = 0.0
             },
-            completion: {
+            completion: { _ in
                 self.removeFromSuperview()
             }
         )

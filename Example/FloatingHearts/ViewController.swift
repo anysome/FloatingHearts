@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(longPressGesture)
     }
     
+    @objc
     func didLongPress(longPressGesture: UILongPressGestureRecognizer) {
         switch longPressGesture.state {
         case .began:
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc
     func showTheLove(gesture: UITapGestureRecognizer?) {
         let heart = HeartView(frame: CGRect(x:0, y:0, width:HeartAttributes.heartSize, height:HeartAttributes.heartSize))
         view.addSubview(heart)
